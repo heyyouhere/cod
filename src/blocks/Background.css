@@ -1,0 +1,39 @@
+.bg_div{
+    z-index: -100;
+    position: absolute;
+    width: 100vw;
+}
+.bg__image{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.bg__video{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+.bg__image_rotated{
+    position: absolute;
+    top: 450px;
+    right: 0;
+    rotate: 90deg;
+}
+.bg__city-image{
+    position: absolute;
+    top:0;
+    left:0;
+}
+.bg__video_no_logo{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+.bg__image_around{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}

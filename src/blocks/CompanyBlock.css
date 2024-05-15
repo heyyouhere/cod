@@ -1,0 +1,69 @@
+.company_gif_container{
+    position: absolute;
+    /* width: 300px; */
+    /* height: 400px; */
+    top: 250px;
+    left: -100px;
+}
+.company_gif{
+    pointer-events: none;
+}
+
+.company_name{
+    position: absolute;
+    top: -200px;
+    left: 800px;
+    font-size: 40px;
+    color: white;
+}
+.company_text_contaier{
+    position: absolute;
+    left: 1600px; /* 500px */
+    top: 320px;
+    font-size: 15px;
+    color: white;
+}
+.company_next_button{
+    background-image: url('../images/button_next.png');
+    position: absolute;
+    top: 550px;
+    left: 1100px; /* 1100 */
+    width: 400px;
+    height: 400px;
+    background-size:contain;
+    background-repeat: no-repeat;
+}
+.gif_button{
+    /* background-color: green; */
+    /* opacity: 0.5; */
+    position: absolute;
+    top: 4%;
+    left: 25%;
+    width: 50%;
+    height: 75%;
+    z-index: 1000;
+}
+
+.company_button{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 400px;
+}
+.company_button_detailes{
+    color: white;
+    width: 120%;
+    height: 100px;
+    text-align: center;
+    font-size: 34px;
+    margin-top: 10px;
+    background-image: url("../images/title.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    object-fit: cover;
+}
+.company_button_logo{
+    margin-left: 30px;
+    width: 100%;
+}
