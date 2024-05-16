@@ -32,7 +32,7 @@ export default function VendorScreen() {
                 </b>
             </div>
        <video id="about_video" className="about_video"> 
-            <source src={test_video} type="video/mp4" autoPlay Muted></source>
+            <source src={test_video} type="video/mp4" autoPlay muted loop></source>
        </video>
        <div id="about_watch_button" className="about_watch_button"></div>
    </>
