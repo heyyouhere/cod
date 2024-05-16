@@ -1,42 +1,48 @@
 import { useEffect } from "react"
 import { motion, useAnimate } from "framer-motion"
-import gif from "../images/icons_gif_loop_1.gif"
 
+import app_gif from "../images/loops/App_Loop.gif"
+import kaspersky_gif from "../images/loops/Kaspersky_Loop.gif"
+import khraneniye_gif from "../images/loops/Khraneniye_Loop.gif"
+import upravl_gif from "../images/loops/Upravl_Loop.gif"
+import virt_gif from "../images/loops/Virt_Loop.gif"
+
+const default_scale = 1.5
 
 const scala_data = {
     id : 1,
-    gif : gif,
+    gif : virt_gif,
     position :
-        {x : 240, y: 230},
-    scale: 1.2,
+        {x : 600, y: 250},
+    scale: default_scale,
 }
 const kaspersky_data = {
     id : 2,
-    gif : gif,
+    gif : app_gif,
     position :
-        {x : 750, y: 120},
-    scale: 1.2,
+        {x : 1150, y: 50},
+    scale: default_scale,
 }
 const basis_data = {
     id : 3,
-    gif : gif,
+    gif : khraneniye_gif,
     position :
-        {x : 950, y: 450},
-    scale: 1.2,
+        {x : 1400, y: 450},
+    scale: default_scale,
 }
 const yadro_data = {
     id : 4,
-    gif : gif,
+    gif : upravl_gif,
     position :
-        {x : 400, y: 520},
-    scale: 1.2,
+        {x : 800, y: 520},
+    scale: default_scale,
 }
 
 const next_data = {
     id : 5,
-    gif : gif,
+    gif : kaspersky_gif,
     position :
-        {x : 930, y: 320},
+        {x : 1050, y: 220},
     scale: 0.8,
 }
 
@@ -80,9 +86,6 @@ export default function TracksMenu() {
             track_gif_continaer_5
         ]
 
-        let track_text_contaier = document.getElementById("track_text_contaier")
-        let track_name = document.getElementById("track_name")
-
         let is_big = false;
         for (let i=0; i<track_gifs.length; i++){
             track_gifs[i].querySelector('.gif_button').onclick = (event) => {
@@ -95,8 +98,6 @@ export default function TracksMenu() {
                             animate(track_gifs[j], { scale: 1, x: 0, y: 0})
                         }
                     }
-                    animate(track_name, {y: -400})
-                    animate(track_text_contaier, {x: +800})
                     is_big = false;
                 } else {
                     for (let j=0; j<track_gifs.length; j++){
@@ -107,23 +108,22 @@ export default function TracksMenu() {
                         }
                     }
                     is_big = true
-                    animate(track_name, {y: 400})
-                    animate(track_text_contaier, {x: -800})
                 }
             }
         }
     }, [])
    return (
      <>
-       <div id="track_name"></div>
        <div id="track_text_contaier"></div>
        <TrackGif track_data={scala_data}></TrackGif>
        <TrackGif track_data={kaspersky_data}></TrackGif>
        <TrackGif track_data={basis_data}></TrackGif>
        <TrackGif track_data={yadro_data}></TrackGif>
        <TrackGif track_data={next_data}></TrackGif>
-       <motion.div initial={{x: 1330, y: 820, scale: 0.7}}>
-            <div id='track_next_button' className='track_next_button'></div>
+       <motion.div initial={{x: 1400, y: 900}}>
+            <div id='track_vendors_button' className='track_vendors_button'>
+                ВЕНДОРЫ
+           </div>
         </motion.div>
     </>
     )

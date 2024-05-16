@@ -21,11 +21,11 @@
     font-size: 15px;
     color: white;
 }
-.track_next_button{
-    background-image: url('../images/button_next.png');
+.track_vendors_button{
+    /* background-image: url('../images/button_next.png'); */
     position: absolute;
-    width: 400px;
-    height: 400px;
+    font-size: 65px;
+    color: white;
     background-size:contain;
     background-repeat: no-repeat;
 }
@@ -37,3 +37,4 @@
     width: 50%;
     height: 80%;
 }
+        
