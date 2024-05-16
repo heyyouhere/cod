@@ -1,13 +1,13 @@
 
 import { useEffect } from "react"
 import { motion, useAnimate } from "framer-motion"
-
+import test_video from "../videos/test_video.mp4"
 export default function VendorScreen() {
     const [scope, animate] = useAnimate()
    return (
      <>
         <div id='about_title_contaier' className="about_title_contaier">
-            <b id='about_title' className="about_title"> ЧТО ТАКОЕ ЦОД? </b>
+            <b id='about_title' className="about_title"> Vendor_name  </b>
         </div>
             <div id='about_text_contaier' className="about_text_contaier">
                 <b className="about_text">
@@ -31,7 +31,10 @@ export default function VendorScreen() {
                     </div>
                 </b>
             </div>
-         <div id='about_next_button' style={{zindex: 100}} className='about_next_button'></div>
+       <video id="about_video" className="about_video"> 
+            <source src={test_video} type="video/mp4" autoPlay Muted></source>
+       </video>
+       <div id="about_watch_button" className="about_watch_button"></div>
    </>
 )
 }

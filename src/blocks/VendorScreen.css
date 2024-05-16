@@ -1,23 +1,22 @@
 .about_title_contaier{
     position: absolute;
-    left: 150px;
-    top: 100px;
+    left: 125px;
+    top: 200px;
 }
 
 .about_title{
     margin: auto;
     color: white;
-    font-size: 65px;
-    margin-top: 7%;
+    font-size: 48px;
     text-align: center;
-    opacity: 0;
 }
 
 .about_text_contaier{
     position: absolute;
-    top: 200px;
-    width: 1200px;
-    font-size: 26px;
+    top: 300px;
+    left: 125px;
+    width: 1000px;
+    font-size: 24px;
     color: white;
 }
 .about_next_button{
@@ -42,4 +41,22 @@
     background-repeat: no-repeat;
     rotate: 180deg;
     z-index: 1000;
+}
+
+.about_video{
+    position: absolute;
+    left: 1150px;
+    top: 300px;
+    width: 700px;
+
+}
+.about_watch_button{
+    position: absolute;
+    left: 1200px;
+    top: 675px;
+    width: 600px;
+    height: 600px;
+    background-image: url("../images/watch.png");
+    background-size:contain;
+    background-repeat: no-repeat;
 }
