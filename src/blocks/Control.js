@@ -61,10 +61,16 @@ export default function Control() {
         let back_button = document.getElementById('back_button_container')
         animate(back_button, {opacity: 0})
 
+        let home_button = document.getElementById('home_button_container')
+        home_button.onclick = () => {
+            hide_partners_buttons()
+            show_tracks()
+        }
 
 
         back_button.onclick = () => {
             if (current_track != null){
+                animate(bg_video, {opacity: 0});
                 for (let j=0; j<track_gifs.length; j++){
                     if (current_track != track_gifs[j]){
                         animate(track_gifs[j], {scale: 1})
@@ -77,12 +83,34 @@ export default function Control() {
             }
         }
 
+        let partners = document.getElementById('partner_buttons_container_logos');
+        let partnerButtons = partners.getElementsByClassName('partner_button');
 
-
-        let home_button = document.getElementById('home_button_container')
-        home_button.onclick = () => {
-            console.log("This is a HOME button")
+        function hide_partners_buttons(){
+            let partnerButtons = partners.getElementsByClassName('partner_button');
+            for (let i = 0; i < partnerButtons.length; i++) {
+                let partnerButton = partnerButtons[i]
+                animate(partnerButton, {scale : 0}, {delay: i/10})
+            }
+            animate(home_button, {opacity : 0})
         }
+        function show_partners_buttons(){
+            let partnerButtons = partners.getElementsByClassName('partner_button');
+            for (let i = 0; i < partnerButtons.length; i++) {
+                let partnerButton = partnerButtons[i]
+                animate(partnerButton, {scale : 1}, {delay: i/10})
+            }
+            animate(home_button, {opacity : 1})
+        }
+        hide_partners_buttons()
+
+        let vendors_button = document.getElementById('track_vendors_button')
+        vendors_button.onclick = () => {
+            hide_tracks()
+            show_partners_buttons()
+        }
+
+
 
 
 
@@ -98,10 +126,29 @@ export default function Control() {
             track_gif_continaer_4,
             track_gif_continaer_5
         ]
+        let bg_video = document.getElementById("bg_video")
+        console.log(bg_video)
+        function hide_tracks(){
+            for (let i=0; i<track_gifs.length; i++){
+                animate(track_gifs[i], {scale : 0});
+            }
+            animate(vendors_button, {scale: 0});
+            animate(bg_video, {opacity: 1});
+        }
 
+        function show_tracks(){
+            for (let i=0; i<track_gifs.length; i++){
+                animate(track_gifs[i], {scale : 1});
+            }
+            animate(vendors_button, {scale: 1});
+            animate(bg_video, {opacity: 0});
+        }
+
+            animate(bg_video, {opacity: 0});
         let is_big = false;
         for (let i=0; i<track_gifs.length; i++){
             track_gifs[i].querySelector('.gif_button').onclick = (event) => {
+                animate(bg_video, {opacity: 1});
                 animate(back_button, {opacity: 1})
                 let target_track_node = event.target.offsetParent
                 target_track_node.position = datas[i].position
