@@ -1,0 +1,45 @@
+.about_title_contaier{
+    position: absolute;
+    left: 150px;
+    top: 100px;
+}
+
+.about_title{
+    margin: auto;
+    color: white;
+    font-size: 65px;
+    margin-top: 7%;
+    text-align: center;
+    opacity: 0;
+}
+
+.about_text_contaier{
+    position: absolute;
+    top: 200px;
+    width: 1200px;
+    font-size: 26px;
+    color: white;
+}
+.about_next_button{
+    background-image: url('../images/button_next.png');
+    position: absolute;
+    top: 650px;
+    left: 2100px; /* 1100 */
+    width: 400px;
+    height: 400px;
+    background-size:contain;
+    background-repeat: no-repeat;
+}
+
+.about_prev_button{
+    background-image: url('../images/button_next.png');
+    position: absolute;
+    top:0;
+    left:0;
+    width: 150px;
+    height: 150px;
+    background-size:contain;
+    background-repeat: no-repeat;
+    rotate: 180deg;
+    z-index: 1000;
+}
