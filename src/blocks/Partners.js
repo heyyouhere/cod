@@ -52,22 +52,22 @@ export default function PartnersMenu() {
             <div id='about_perv_button' className='about_prev_button'></div>
         </motion.div>
         <motion.div initial={{x: -400}}> 
-            <div id='partners' className="partner">
+            <div id='partners' className="partners">
                  <b>ПАРТНЕРЫ</b>
             </div>
         </motion.div>
         <motion.div initial={{x : 2000}}> 
         <div id="partner_buttons_container_logos">
-            <motion.div initial={{ x: 300, y: 200 }}>
+            <motion.div initial={{ x: 300, y: 250 }}>
                 <PartnerButton image_src={skala_logo}></PartnerButton>
             </motion.div>
-            <motion.div initial={{ x: 800, y: 200 }}>
+            <motion.div initial={{ x: 1000, y: 250 }}>
                 <PartnerButton image_src={yadro_logo}></PartnerButton>
             </motion.div>
-            <motion.div initial={{ x: 300, y: 500 }}>
+            <motion.div initial={{ x: 300, y: 550 }}>
                 <PartnerButton image_src={kaspersky_logo}></PartnerButton>
             </motion.div>
-            <motion.div initial={{ x: 800, y: 500 }}>
+            <motion.div initial={{ x: 1000, y: 550 }}>
                 <PartnerButton image_src={basis_logo}></PartnerButton>
             </motion.div>
         </div>

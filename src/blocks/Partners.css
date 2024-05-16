@@ -3,7 +3,7 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
-    width: 500px;
+    width: 550px;
 }
 .partner_button_detailes{
     color: white;
@@ -20,4 +20,10 @@
 .partner_button_logo{
     margin-left: 30px;
     width: 100%;
+}
+
+.partners{
+    position: absolute;
+    font-size: 40px;
+    color: white;
 }
