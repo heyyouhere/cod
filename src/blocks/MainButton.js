@@ -16,9 +16,6 @@ function InfoButton() {
         let about_text_contaier = document.getElementById("about_text_contaier")
         let about_title = document.getElementById("about_title")
         let bg__image_around = document.getElementById("bg__image_around")
-        
-
-
         document.body.onclick = () => {
             animate(button, { y: -200 });
         }

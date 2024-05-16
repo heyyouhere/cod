@@ -1,0 +1,37 @@
+
+.track_gif_container{
+    position: absolute;
+    /* width: 300px; */
+    /* height: 400px; */
+    top: 250px;
+    left: -100px;
+}
+.track_gif{
+    pointer-events: none;
+}
+
+.track_name{
+    position: absolute;
+    top: -200px;
+    left: 800px;
+    font-size: 40px;
+    color: white;
+    background-color:red;
+}
+.track_text_contaier{
+    position: absolute;
+    left: 1600px; /* 500px */
+    top: 320px;
+    font-size: 15px;
+    color: white;
+}
+.track_next_button{
+    background-image: url('../images/button_next.png');
+    position: absolute;
+    top: 550px;
+    left: 1100px; /* 1100 */
+    width: 400px;
+    height: 400px;
+    background-size:contain;
+    background-repeat: no-repeat;
+}

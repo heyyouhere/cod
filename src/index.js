@@ -8,10 +8,15 @@ import MainButton from './blocks/MainButton';
 import './blocks/MainButton.css'
 import AboutCod from './blocks/AboutCod';
 import './blocks/AboutCod.css'
-import CompanyBlock from './blocks/CompanyBlock';
-import './blocks/CompanyBlock.css'
-import MainScreen from './blocks/MainScreen';
-import CompanyMenu from './blocks/CompanyMenu';
+
+
+import './blocks/Tracks.css'
+
+import PartnersMenu from './blocks/Partners'
+import './blocks/Partners.css'
+
+import TracksMenu from './blocks/Tracks'
+import './blocks/Tracks.css'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -19,12 +24,12 @@ root.render(
     <Background></Background>
     <MainButton></MainButton>
     <AboutCod></AboutCod>
-    <CompanyMenu></CompanyMenu>
-    {/* <CompanyBlock></CompanyBlock> */}
-    {/* <MainScreen></MainScreen> */}
+    <PartnersMenu></PartnersMenu>
   </>
 );
 
+
+//<TracksMenu></TracksMenu>
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals

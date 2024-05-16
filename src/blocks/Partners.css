@@ -1,0 +1,23 @@
+.partner_button{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 500px;
+}
+.partner_button_detailes{
+    color: white;
+    width: 120%;
+    height: 100px;
+    text-align: center;
+    font-size: 34px;
+    margin-top: 10px;
+    background-image: url("../images/title.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    object-fit: cover;
+}
+.partner_button_logo{
+    margin-left: 30px;
+    width: 100%;
+}
