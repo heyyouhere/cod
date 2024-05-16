@@ -1,7 +1,8 @@
 .bg_div{
     z-index: -100;
     position: absolute;
-    width: 100vw;
+    height: 100%;
+    width: 100%;
 }
 .bg__image{
     position: absolute;

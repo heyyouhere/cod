@@ -7,40 +7,54 @@ const scala_data = {
     id : 1,
     gif : gif,
     position :
-        {x : 0, y: 0},
+        {x : 240, y: 230},
+    scale: 1.2,
 }
 const kaspersky_data = {
     id : 2,
     gif : gif,
     position :
-        {x : 300, y: -200},
+        {x : 750, y: 120},
+    scale: 1.2,
 }
 const basis_data = {
     id : 3,
     gif : gif,
     position :
-        {x : 600, y: 0},
+        {x : 950, y: 450},
+    scale: 1.2,
 }
 const yadro_data = {
     id : 4,
     gif : gif,
     position :
-        {x : 300, y: 200}
+        {x : 400, y: 520},
+    scale: 1.2,
 }
 
+const next_data = {
+    id : 5,
+    gif : gif,
+    position :
+        {x : 930, y: 320},
+    scale: 0.8,
+}
+
+const show_position = {x : 400, y: 350, scale : 1.5}
 
 const datas = [
-scala_data,
-kaspersky_data,
-basis_data,
-yadro_data
+    scala_data,
+    kaspersky_data,
+    basis_data,
+    yadro_data,
+    next_data
 ]
+
 
 
 function TrackGif({track_data}){
     return (
-       <motion.div initial={{ x: track_data.position.x, y: track_data.position.y}}>
-
+       <motion.div initial={{ x: track_data.position.x, y: track_data.position.y, scale: track_data.scale}}>
             <div id={'track_gif_continaer_'+track_data.id} className="track_gif_container">
                 <div className="gif_button"> </div>
                 <img className='track_gif' src={track_data.gif}></img>
@@ -57,11 +71,13 @@ export default function TracksMenu() {
         let track_gif_continaer_2 = document.getElementById("track_gif_continaer_2")
         let track_gif_continaer_3 = document.getElementById("track_gif_continaer_3")
         let track_gif_continaer_4 = document.getElementById("track_gif_continaer_4")
+        let track_gif_continaer_5 = document.getElementById("track_gif_continaer_5")
         let track_gifs = [
             track_gif_continaer_1,
             track_gif_continaer_2,
             track_gif_continaer_3,
             track_gif_continaer_4,
+            track_gif_continaer_5
         ]
 
         let track_text_contaier = document.getElementById("track_text_contaier")
@@ -87,7 +103,7 @@ export default function TracksMenu() {
                         if (track_gifs[i] != track_gifs[j]){
                             animate(track_gifs[j], {scale: 0})
                         } else {
-                            animate(track_gifs[j], { scale: 1.2, x:  200 - datas[j].position.x, y: 60 - datas[j].position.y})
+                            animate(track_gifs[j], { scale:  show_position.scale, x:  show_position.x - datas[j].position.x, y: show_position.y - datas[j].position.y})
                         }
                     }
                     is_big = true
@@ -105,7 +121,10 @@ export default function TracksMenu() {
        <TrackGif track_data={kaspersky_data}></TrackGif>
        <TrackGif track_data={basis_data}></TrackGif>
        <TrackGif track_data={yadro_data}></TrackGif>
-       <div id='track_next_button' className='track_next_button'></div>
+       <TrackGif track_data={next_data}></TrackGif>
+       <motion.div initial={{x: 1330, y: 820, scale: 0.7}}>
+            <div id='track_next_button' className='track_next_button'></div>
+        </motion.div>
     </>
     )
 }
