@@ -120,9 +120,8 @@ export default function TracksMenu() {
        <TrackGif track_data={basis_data}></TrackGif>
        <TrackGif track_data={yadro_data}></TrackGif>
        <TrackGif track_data={next_data}></TrackGif>
-       <motion.div initial={{x: 1400, y: 900}}>
+       <motion.div initial={{x: 1250, y: 850}}>
             <div id='track_vendors_button' className='track_vendors_button'>
-                ВЕНДОРЫ
            </div>
         </motion.div>
     </>

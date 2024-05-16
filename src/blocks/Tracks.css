@@ -22,7 +22,9 @@
     color: white;
 }
 .track_vendors_button{
-    /* background-image: url('../images/button_next.png'); */
+    background-image: url('../images/vendors_button.png');
+    width: 600px;
+    height: 300px;
     position: absolute;
     font-size: 65px;
     color: white;
