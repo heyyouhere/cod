@@ -11,35 +11,38 @@ import yadro_logo     from "../images/logos/yadro_logo.png"
 
 const basis_data = {
     logo : basis_logo,
-    position : { x: 300, y: 250 }
+    position : { x: 1100, y: 200 },
+    text: "Вендор решений для организации динамической инфраструктуры, виртуальных рабочих мест и оказания облачных услуг"
+
 }
 const kaspersky_data = {
     logo : kaspersky_logo,
-    position : { x: 1000, y: 250 }
+    position : { x: 1100, y: 625 },
+    text: "Разработчик решений для защиты корпоративной ИТ-инфраструктуры"
 }
 const skala_data = {
     logo : skala_logo,
-    position : { x: 300, y: 550 }
+    position : { x: 300, y: 200 },
+    text: "Производитель модульной платформы для построения корпоративной ИТ-инфраструктуры"
 }
 const yadro_data = {
     logo : yadro_logo,
-    position : { x: 1000, y: 550 }
+    position : { x: 300, y: 625 },
+    text: "Разработчик решений для защиты корпоративной ИТ-инфраструктуры"
 }
 
 function PartnerButton({partner_data}) {
    return (
-      <>
+    <motion.div initial={{ x: partner_data.position.x, y: partner_data.position.y}}>
         <div className="partner_button">
             <img className="partner_button_logo"  src={partner_data.logo}></img>
+            <div className="partner_text">
+                {partner_data.text}
+            </div>
             <div className="partner_button_detailes">
-                <div style={{marginTop: "15px"}}>
-                    <b>
-                    ПОДРОБНЕЕ
-                    </b>
-                </div>
             </div>
         </div>
-      </>
+    </motion.div>
  )
 }
 
@@ -67,27 +70,12 @@ export default function PartnersMenu() {
         <motion.div initial={{x: -400}}> 
             <div id='about_perv_button' className='about_prev_button'></div>
         </motion.div>
-        <motion.div initial={{x: -400}}> 
-            <div id='partners' className="partners">
-                 <b>ПАРТНЕРЫ</b>
-            </div>
-        </motion.div>
-        <motion.div initial={{x : 2000}}> 
         <div id="partner_buttons_container_logos">
-            <motion.div initial={{ x: 300, y: 250 }}>
                 <PartnerButton partner_data={skala_data}></PartnerButton>
-            </motion.div>
-            <motion.div initial={{ x: 1000, y: 250 }}>
-                <PartnerButton partner_data={yadro_data}></PartnerButton>
-            </motion.div>
-            <motion.div initial={{ x: 300, y: 550 }}>
-                <PartnerButton partner_data={kaspersky_data}></PartnerButton>
-            </motion.div>
-            <motion.div initial={{ x: 1000, y: 550 }}>
                 <PartnerButton partner_data={basis_data}></PartnerButton>
-            </motion.div>
+                <PartnerButton partner_data={yadro_data}></PartnerButton>
+                <PartnerButton partner_data={kaspersky_data}></PartnerButton>
         </div>
-        </motion.div>
         </>
     )
 }
