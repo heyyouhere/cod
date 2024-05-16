@@ -1,0 +1,21 @@
+.back_button_container{
+    position: absolute;
+    top: 75px;
+    left: 100px;
+    width: 125px;
+    height: 125px;
+    background-image: url("../images/back_button.png");
+    background-size:contain;
+    background-repeat: no-repeat;
+}
+
+.home_button_container{
+    position: absolute;
+    top: 75px;
+    left: 1720px;
+    width: 125px;
+    height: 125px;
+    background-image: url("../images/home_button.png");
+    background-size:contain;
+    background-repeat: no-repeat;
+}
