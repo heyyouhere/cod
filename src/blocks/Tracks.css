@@ -35,3 +35,11 @@
     background-size:contain;
     background-repeat: no-repeat;
 }
+
+.gif_button{
+    position: absolute;
+    left: 25%;
+    top: 10%;
+    width: 50%;
+    height: 80%;
+}
