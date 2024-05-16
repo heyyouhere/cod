@@ -71,47 +71,6 @@ function TrackGif({track_data}){
 
 
 export default function TracksMenu() {
-    const [scope, animate] = useAnimate()
-    useEffect(()=>{
-        let track_gif_continaer_1 = document.getElementById("track_gif_continaer_1")
-        let track_gif_continaer_2 = document.getElementById("track_gif_continaer_2")
-        let track_gif_continaer_3 = document.getElementById("track_gif_continaer_3")
-        let track_gif_continaer_4 = document.getElementById("track_gif_continaer_4")
-        let track_gif_continaer_5 = document.getElementById("track_gif_continaer_5")
-        let track_gifs = [
-            track_gif_continaer_1,
-            track_gif_continaer_2,
-            track_gif_continaer_3,
-            track_gif_continaer_4,
-            track_gif_continaer_5
-        ]
-
-        let is_big = false;
-        for (let i=0; i<track_gifs.length; i++){
-            track_gifs[i].querySelector('.gif_button').onclick = (event) => {
-                let self = event.orignalTarget
-                if (is_big){
-                    for (let j=0; j<track_gifs.length; j++){
-                        if (track_gifs[i] != track_gifs[j]){
-                            animate(track_gifs[j], {scale: 1})
-                        } else {
-                            animate(track_gifs[j], { scale: 1, x: 0, y: 0})
-                        }
-                    }
-                    is_big = false;
-                } else {
-                    for (let j=0; j<track_gifs.length; j++){
-                        if (track_gifs[i] != track_gifs[j]){
-                            animate(track_gifs[j], {scale: 0})
-                        } else {
-                            animate(track_gifs[j], { scale:  show_position.scale, x:  show_position.x - datas[j].position.x, y: show_position.y - datas[j].position.y})
-                        }
-                    }
-                    is_big = true
-                }
-            }
-        }
-    }, [])
    return (
      <>
        <div id="track_text_contaier"></div>
