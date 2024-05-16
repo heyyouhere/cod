@@ -9,12 +9,28 @@ import skala_logo     from "../images/logos/skala_logo.png"
 import yadro_logo     from "../images/logos/yadro_logo.png"
 
 
+const basis_data = {
+    logo : basis_logo,
+    position : { x: 300, y: 250 }
+}
+const kaspersky_data = {
+    logo : kaspersky_logo,
+    position : { x: 1000, y: 250 }
+}
+const skala_data = {
+    logo : skala_logo,
+    position : { x: 300, y: 550 }
+}
+const yadro_data = {
+    logo : yadro_logo,
+    position : { x: 1000, y: 550 }
+}
 
-function PartnerButton({image_src}) {
+function PartnerButton({partner_data}) {
    return (
       <>
         <div className="partner_button">
-            <img className="partner_button_logo"  src={image_src}></img>
+            <img className="partner_button_logo"  src={partner_data.logo}></img>
             <div className="partner_button_detailes">
                 <div style={{marginTop: "15px"}}>
                     <b>
@@ -59,16 +75,16 @@ export default function PartnersMenu() {
         <motion.div initial={{x : 2000}}> 
         <div id="partner_buttons_container_logos">
             <motion.div initial={{ x: 300, y: 250 }}>
-                <PartnerButton image_src={skala_logo}></PartnerButton>
+                <PartnerButton partner_data={skala_data}></PartnerButton>
             </motion.div>
             <motion.div initial={{ x: 1000, y: 250 }}>
-                <PartnerButton image_src={yadro_logo}></PartnerButton>
+                <PartnerButton partner_data={yadro_data}></PartnerButton>
             </motion.div>
             <motion.div initial={{ x: 300, y: 550 }}>
-                <PartnerButton image_src={kaspersky_logo}></PartnerButton>
+                <PartnerButton partner_data={kaspersky_data}></PartnerButton>
             </motion.div>
             <motion.div initial={{ x: 1000, y: 550 }}>
-                <PartnerButton image_src={basis_logo}></PartnerButton>
+                <PartnerButton partner_data={basis_data}></PartnerButton>
             </motion.div>
         </div>
         </motion.div>
