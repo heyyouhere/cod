@@ -9,24 +9,32 @@ const scala_data = {
     id : 1,
     position :
         {x : 600, y: 250},
+    target_position : 
+        {x : 400, y: 50, scale : 3.0},
     scale: default_scale,
 }
 const kaspersky_data = {
     id : 2,
     position :
         {x : 1150, y: 50},
+    target_position : 
+        {x : -250, y: 150, scale : 1.8},
     scale: default_scale,
 }
 const basis_data = {
     id : 3,
     position :
         {x : 1400, y: 450},
+    target_position : 
+        {x : -150, y: -50, scale : 2.5},
     scale: default_scale,
 }
 const yadro_data = {
     id : 4,
     position :
         {x : 800, y: 520},
+    target_position : 
+        {x : -50, y: -100, scale : 1.8},
     scale: default_scale,
 }
 
@@ -34,10 +42,10 @@ const next_data = {
     id : 5,
     position :
         {x : 1050, y: 220},
+    target_position : 
+        {x : -1100, y: 250, scale : 3},
     scale: 0.8,
 }
-
-const show_position = {x : 400, y: 350, scale : 1.5}
 
 const datas = [
     scala_data,
@@ -80,6 +88,7 @@ export default function Control() {
                     }
                 }
                 animate(back_button, {opacity: 0})
+                animate(vendors_button, {scale: 1});
             }
         }
 
@@ -149,16 +158,21 @@ export default function Control() {
         for (let i=0; i<track_gifs.length; i++){
             track_gifs[i].querySelector('.gif_button').onclick = (event) => {
                 animate(bg_video, {opacity: 1});
+                animate(vendors_button, {scale: 0});
                 animate(back_button, {opacity: 1})
                 let target_track_node = event.target.offsetParent
                 target_track_node.position = datas[i].position
                 current_track = target_track_node;
                 console.log(current_track)
                 for (let j=0; j<track_gifs.length; j++){
-                    if (track_gifs[i] != track_gifs[j]){
+                    if (current_track != track_gifs[j]){
                         animate(track_gifs[j], {scale: 0})
                     } else {
-                        animate(track_gifs[j], { scale:  show_position.scale, x:  show_position.x - datas[j].position.x, y: show_position.y - datas[j].position.y})
+                        animate(track_gifs[j], { 
+                            scale: datas[j].target_position.scale, 
+                            x: datas[j].target_position.x, 
+                            y: datas[j].target_position.y
+                        })
                     }
                 }
             }
