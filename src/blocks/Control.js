@@ -221,6 +221,7 @@ export default function Control() {
             track_gif_continaer_5
         ]
         const tracks_server_image= document.getElementById('tracks_server_image')
+        const tracks_texts_alpha = document.getElementById('tracks_texts_alpha')
         const bg_video = document.getElementById("bg_video")
         function hide_tracks(){
             for (let i=0; i<track_gifs.length; i++){
@@ -228,6 +229,7 @@ export default function Control() {
             }
             animate(vendors_button, {scale: 0});
             animate(tracks_server_image, {scale:0} )
+            animate(tracks_texts_alpha, {opacity:0} )
             animate(bg_video, {opacity: 1});
         }
 
@@ -237,6 +239,7 @@ export default function Control() {
             }
             animate(vendors_button, {scale: 1});
             animate(tracks_server_image, {scale:1} )
+            animate(tracks_texts_alpha, {opacity:1} )
             animate(bg_video, {opacity: 0});
         }
 
@@ -248,6 +251,7 @@ export default function Control() {
                 animate(vendors_button, {scale: 0});
                 animate(back_button, {opacity: 1})
                 animate(tracks_server_image, {scale:0} )
+                animate(tracks_texts_alpha, {opacity:0} )
                 let target_track_node = event.target.offsetParent
                 target_track_node.position = datas[i].position
                 current_track = target_track_node;
