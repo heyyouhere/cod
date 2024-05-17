@@ -4,10 +4,6 @@ import './index.css';
 import reportWebVitals from './reportWebVitals';
 import Background from './blocks/Background';
 import './blocks/Background.css'
-import MainButton from './blocks/MainButton';
-import './blocks/MainButton.css'
-import AboutCod from './blocks/AboutCod';
-import './blocks/AboutCod.css'
 
 
 import './blocks/Tracks.css'
@@ -18,17 +14,36 @@ import './blocks/Partners.css'
 import TracksMenu from './blocks/Tracks'
 import './blocks/Tracks.css'
 
+
+import VendorScreen from './blocks/VendorScreen.js'
+import './blocks/VendorScreen.css'
+
+
+import {BackButton, HomeButton, TrackRightButton, TrackLeftButton} from './blocks/Buttons.js'
+import './blocks/Buttons.css'
+
+
+import Control from './blocks/Control.js'
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <>
     <Background></Background>
-    {/* <MainButton></MainButton> */}
     <TracksMenu></TracksMenu>
-    <AboutCod></AboutCod>
     <PartnersMenu></PartnersMenu>
+    <BackButton/>
+    <HomeButton/>
+    <Control/>
+    <TrackLeftButton/>
+    <TrackRightButton/>
+    <VendorScreen></VendorScreen>
+
   </>
 );
 
+/*
+
+*/
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
