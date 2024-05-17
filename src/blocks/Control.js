@@ -69,12 +69,40 @@ export default function Control() {
         let back_button = document.getElementById('back_button_container')
         animate(back_button, {opacity: 0})
 
+        let right_button = document.getElementById('track_right_button_container')
+        let left_button = document.getElementById('track_left_button_container')
+
+        function hide_track_buttons(){
+            animate(right_button, {x: -2000})
+            animate(left_button, {x: 2000})
+        }
+        function show_track_buttons(left_text, right_text){
+            animate(right_button, {x: 0})
+            animate(left_button, {x: 0 })
+            console.log("TODO: insert text into divs:", left_text, right_text)
+        }
+
+        hide_track_buttons()
+
+
         let home_button = document.getElementById('home_button_container')
         home_button.onclick = () => {
             hide_partners_buttons()
             show_tracks()
         }
 
+        function animate_track(track, data){
+            animate(track, { 
+                scale: data.target_position.scale, 
+                x: data.target_position.x, 
+                y: data.target_position.y
+            })
+            console.log(track)
+            if (track.id == 'track_gif_continaer_1' || track.id == 'track_gif_continaer_3'){
+                show_track_buttons("Left", "Right")
+            
+            }
+        }
 
         back_button.onclick = () => {
             if (current_track != null){
@@ -89,6 +117,7 @@ export default function Control() {
                 }
                 animate(back_button, {opacity: 0})
                 animate(vendors_button, {scale: 1});
+                hide_track_buttons()
             }
         }
 
@@ -168,11 +197,7 @@ export default function Control() {
                     if (current_track != track_gifs[j]){
                         animate(track_gifs[j], {scale: 0})
                     } else {
-                        animate(track_gifs[j], { 
-                            scale: datas[j].target_position.scale, 
-                            x: datas[j].target_position.x, 
-                            y: datas[j].target_position.y
-                        })
+                        animate_track(current_track, datas[j]);
                     }
                 }
             }

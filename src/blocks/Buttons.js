@@ -18,3 +18,21 @@ export function HomeButton() {
      </>
    )
 }
+export function TrackLeftButton() {
+   return (
+     <>
+        <div id='track_left_button_container' className="track_left_button_container">
+            <h1 className="track_button_text"> Text </h1>
+        </div>
+     </>
+   )
+}
+export function TrackRightButton() {
+   return (
+     <>
+        <div id='track_right_button_container' className="track_right_button_container">
+            <h1 className="track_button_text"> Text </h1>
+        </div>
+     </>
+   )
+}

@@ -19,3 +19,35 @@
     background-size:contain;
     background-repeat: no-repeat;
 }
+
+.track_right_button_container{
+    position: absolute;
+    top: 800px;
+    left: 50px;
+    width: 900px;
+    height: 500px;
+    background-image: url("../images/right_left_button_image.png");
+    background-size:contain;
+    text-align: center;
+    vertical-align: middle;
+    background-repeat: no-repeat;
+}
+.track_button_text{
+    margin-top: 10%;
+    color: white;
+}
+
+.track_left_button_container{
+    position: absolute;
+    top: 800px;
+    left: 950px;
+    width: 900px;
+    height: 500px;
+    background-image: url("../images/right_left_button_image.png");
+    background-size:contain;
+    background-repeat: no-repeat;
+    text-align: center;
+    vertical-align: middle;
+    background-repeat: no-repeat;
+}
+
