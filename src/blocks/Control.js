@@ -115,6 +115,7 @@ export default function Control() {
             animate(about_watch_button, {x: 800})
         }
         function show_about(){
+            // TODO: change about page according to partner data???
             current_partner = ""
             animate(about_title, {y: 0}, {delay: 0.5})
             animate(about_text_container, {scale: 1}, {delay: 0.5})
