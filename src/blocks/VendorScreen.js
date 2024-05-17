@@ -1,7 +1,7 @@
 
 import { useEffect } from "react"
 import { motion, useAnimate } from "framer-motion"
-import test_video from "../videos/test_video.mp4"
+import test_video from "../videos/basis_about_video.mp4"
 export default function VendorScreen() {
     const [scope, animate] = useAnimate()
    return (
@@ -31,8 +31,8 @@ export default function VendorScreen() {
                     </div>
                 </b>
             </div>
-       <video id="about_video" className="about_video"> 
-            <source src={test_video} type="video/mp4" autoPlay muted loop></source>
+       <video id="about_video" className="about_video" autoPlay muted loop> 
+            <source src={test_video} type="video/mp4"></source>
        </video>
        <div id="about_watch_button" className="about_watch_button"></div>
    </>
