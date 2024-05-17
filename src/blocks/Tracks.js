@@ -13,7 +13,7 @@ const scala_data = {
     id : 1,
     gif : virt_gif,
     position :
-        {x : 600, y: 250},
+        {x : 600, y: 150},
     scale: default_scale,
 }
 const kaspersky_data = {
@@ -42,8 +42,8 @@ const next_data = {
     id : 5,
     gif : kaspersky_gif,
     position :
-        {x : 1050, y: 220},
-    scale: 0.8,
+        {x : 1350, y: 200},
+    scale: 1.2,
 }
 
 const show_position = {x : 400, y: 350, scale : 1.5}
@@ -76,10 +76,14 @@ export default function TracksMenu() {
        <div id="track_text_contaier"></div>
        <TrackGif track_data={scala_data}></TrackGif>
        <TrackGif track_data={kaspersky_data}></TrackGif>
+       <motion.div initial={{x: 900, y: 450, scale:1.1}}>
+            <div id='tracks_server_image' className='tracks_server_image'>
+           </div>
+        </motion.div>
        <TrackGif track_data={basis_data}></TrackGif>
        <TrackGif track_data={yadro_data}></TrackGif>
        <TrackGif track_data={next_data}></TrackGif>
-       <motion.div initial={{x: 1250, y: 850}}>
+       <motion.div initial={{x: 1250, y: 50}}>
             <div id='track_vendors_button' className='track_vendors_button'>
            </div>
         </motion.div>
