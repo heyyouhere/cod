@@ -6,10 +6,10 @@ export default function VendorScreen() {
     const [scope, animate] = useAnimate()
    return (
      <>
-        <div id='about_title_contaier' className="about_title_contaier">
+        <div id='about_title_container' className="about_title_contaier">
             <b id='about_title' className="about_title"> Vendor_name  </b>
         </div>
-            <div id='about_text_contaier' className="about_text_contaier">
+            <div id='about_text_container' className="about_text_contaier">
                 <b className="about_text">
                     <div>
                     В условиях непрерывного технологического развития ИТ-инфраструктура определяет эффективность, надежность и защищенность работы организации любой отрасли.

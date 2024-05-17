@@ -10,22 +10,26 @@ import yadro_logo     from "../images/logos/yadro_logo.png"
 
 
 const basis_data = {
+    id: 'partner_basis',
     logo : basis_logo,
     position : { x: 1100, y: 200 },
     text: "Вендор решений для организации динамической инфраструктуры, виртуальных рабочих мест и оказания облачных услуг"
 
 }
 const kaspersky_data = {
+    id: 'partner_kaspersky',
     logo : kaspersky_logo,
     position : { x: 1100, y: 625 },
     text: "Разработчик решений для защиты корпоративной ИТ-инфраструктуры"
 }
 const skala_data = {
+    id: 'partner_skala',
     logo : skala_logo,
     position : { x: 300, y: 200 },
     text: "Производитель модульной платформы для построения корпоративной ИТ-инфраструктуры"
 }
 const yadro_data = {
+    id: 'partner_yadro',
     logo : yadro_logo,
     position : { x: 300, y: 625 },
     text: "Разработчик решений для защиты корпоративной ИТ-инфраструктуры"
@@ -34,7 +38,7 @@ const yadro_data = {
 function PartnerButton({partner_data}) {
    return (
     <motion.div initial={{ x: partner_data.position.x, y: partner_data.position.y}}>
-        <div className="partner_button">
+        <div id={partner_data.id} className="partner_button">
             <img className="partner_button_logo"  src={partner_data.logo}></img>
             <div className="partner_text">
                 {partner_data.text}
