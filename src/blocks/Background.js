@@ -4,7 +4,7 @@ import video_no_bg from "../videos/back_no_info.mp4"
 import { motion, useAnimate } from "framer-motion"
 import around_image from "../images/around.png"
 import bg_grid_video from "../videos/start_bg.mp4"
-import bg_video from "../videos/back_no_info.mp4"
+import bg_video from "../videos/default_bg.mp4"
 
  export default function Background() {
    return (
