@@ -43,7 +43,7 @@ const next_data = {
     position :
         {x : 1050, y: 220},
     target_position : 
-        {x : -1100, y: 250, scale : 3},
+        {x : -700, y: 100, scale : 2.5},
     scale: 0.8,
 }
 
@@ -143,7 +143,11 @@ export default function Control() {
             if (current_partner != null){
                 hide_about()
                 show_partners_buttons()
+            } else {
                 animate(back_button, {opacity: 0})
+                hide_partners_buttons()
+                show_tracks()
+                hide_about()
             }
 
         }
@@ -168,6 +172,8 @@ export default function Control() {
             partner_basis,
             partner_yadro
         ]
+        const vendors_graphics = document.getElementById('vendors_graphics')
+        const vendors_text = document.getElementById('vendors_text')
 
         for (let i = 0; i < partnerButtons.length; i++) {
             let partnerButton = partnerButtons[i]
@@ -184,6 +190,8 @@ export default function Control() {
                 let partnerButton = partnerButtons[i]
                 animate(partnerButton, {scale : 0}, {delay: i/10})
             }
+            animate(vendors_graphics, {scale : 0})
+            animate(vendors_text, {scale : 0})
             animate(home_button, {opacity : 0})
         }
         function show_partners_buttons(){
@@ -191,6 +199,9 @@ export default function Control() {
                 let partnerButton = partnerButtons[i]
                 animate(partnerButton, {scale : 1}, {delay: i/10})
             }
+            animate(vendors_graphics, {scale : 1})
+            animate(vendors_text, {scale : 1})
+            animate(back_button, {opacity : 1})
             animate(home_button, {opacity : 1})
         }
         hide_partners_buttons()
@@ -209,12 +220,14 @@ export default function Control() {
             track_gif_continaer_4,
             track_gif_continaer_5
         ]
+        const tracks_server_image= document.getElementById('tracks_server_image')
         const bg_video = document.getElementById("bg_video")
         function hide_tracks(){
             for (let i=0; i<track_gifs.length; i++){
                 animate(track_gifs[i], {scale : 0});
             }
             animate(vendors_button, {scale: 0});
+            animate(tracks_server_image, {scale:0} )
             animate(bg_video, {opacity: 1});
         }
 
@@ -223,6 +236,7 @@ export default function Control() {
                 animate(track_gifs[i], {scale : 1});
             }
             animate(vendors_button, {scale: 1});
+            animate(tracks_server_image, {scale:1} )
             animate(bg_video, {opacity: 0});
         }
 
@@ -233,6 +247,7 @@ export default function Control() {
                 animate(bg_video, {opacity: 1});
                 animate(vendors_button, {scale: 0});
                 animate(back_button, {opacity: 1})
+                animate(tracks_server_image, {scale:0} )
                 let target_track_node = event.target.offsetParent
                 target_track_node.position = datas[i].position
                 current_track = target_track_node;
