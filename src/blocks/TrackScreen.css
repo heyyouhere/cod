@@ -1,0 +1,107 @@
+/* basis_left.png */
+/* basis_right.png */
+/* kaspersky_1.png */
+/* kaspersky_2.png */
+/* skala.png */
+/* skala_left.png */
+/* skala_right.png */
+/* yadro.png */
+
+
+.track_left_info{
+    position: absolute;
+    top: 150px;
+    left: 900px;
+    width: 900px;
+    height: 100%;
+    pointer-events: none;
+    background-size:contain;
+    background-repeat: no-repeat;
+}
+
+#yadro_track_text{
+    background-image: url('../images/tracks_bg/yadro.png');
+}
+
+#skala_track_text{
+    background-image: url('../images/tracks_bg/skala.png');
+}
+
+#kaspersky_1_track_text{
+    background-image: url('../images/tracks_bg/kaspersky_1.png');
+}
+
+#kaspersky_2_track_text{
+    background-image: url('../images/tracks_bg/kaspersky_2.png');
+}
+.track_full_info{
+    position: absolute;
+    top: 50px;
+    width: 1900px;
+    left: -75px;
+    height: 100%;
+    pointer-events: none;
+    background-size:contain;
+    background-repeat: no-repeat;
+}
+#basis_track_text_left{
+    background-image: url('../images/tracks_bg/basis_left.png');
+}
+#basis_track_text_right{
+    background-image: url('../images/tracks_bg/basis_right.png');
+}
+#skala_track_text_left{
+    background-image: url('../images/tracks_bg/skala_left.png');
+}
+#skala_track_text_right{
+    background-image: url('../images/tracks_bg/skala_right.png');
+}
+.kaspersky_track_next_button{
+    position: absolute;
+    top: 900px;
+    left: 1720px;
+    width: 125px;
+    height: 100%;
+    background-size:contain;
+    background-repeat: no-repeat;
+    background-image: url('../images/forward_button.png');
+}
+
+.track_left_button{
+    position: absolute;
+    top: 750px;
+    left: 50px;
+    width: 900px;
+    height: 500px;
+    background-size:contain;
+    text-align: center;
+    vertical-align: middle;
+    background-repeat: no-repeat;
+}
+.track_right_button{
+    position: absolute;
+    top: 750px;
+    left: 950px;
+    width: 900px;
+    height: 500px;
+    background-image: url("../images/right_left_button_image.png");
+    background-size:contain;
+    background-repeat: no-repeat;
+    text-align: center;
+    vertical-align: middle;
+    background-repeat: no-repeat;
+}
+#skala_left_button{
+    top: 725px;
+    background-image: url("../images/tracks_bg/partner4_left_button.png");
+}
+#basis_left_button{
+    background-image: url("../images/tracks_bg/partner1_left_button.png");
+}
+#skala_right_button{
+    top: 725px;
+    background-image: url("../images/tracks_bg/partner4_right_button.png");
+}
+#basis_right_button{
+    background-image: url("../images/tracks_bg/partner1_right_button.png");
+}

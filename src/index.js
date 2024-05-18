@@ -18,6 +18,8 @@ import './blocks/Tracks.css'
 import VendorScreen from './blocks/VendorScreen.js'
 import './blocks/VendorScreen.css'
 
+import TrackScreen from './blocks/TrackScreen.js'
+import './blocks/TrackScreen.css'
 
 import {BackButton, HomeButton, TrackRightButton, TrackLeftButton} from './blocks/Buttons.js'
 import './blocks/Buttons.css'
@@ -33,11 +35,15 @@ root.render(
     <PartnersMenu></PartnersMenu>
     <BackButton/>
     <HomeButton/>
-    <Control/>
+    <TrackScreen/>
     <TrackLeftButton/>
     <TrackRightButton/>
     <VendorScreen></VendorScreen>
 
+
+
+
+    <Control/>
   </>
 );
 
