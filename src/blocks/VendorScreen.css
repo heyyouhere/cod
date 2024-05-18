@@ -13,21 +13,62 @@
 
 .about_text_contaier{
     position: absolute;
-    top: 300px;
+    top: 275px;
     left: 125px;
-    width: 1000px;
+    width: 900px;
+    height: 100%;
     font-size: 24px;
     color: white;
+    background-size:contain;
+    background-repeat: no-repeat;
+    /* background-image: url('../images/partners_bg/basis_partner_bg.png'); */
+    /* background-image: url('../images/partners_bg/lab_partner_bg.png'); */
+    /* background-image: url('../images/partners_bg/yadro_partner_bg.png'); */
 }
+
+#skala_text_container{
+    background-image: url('../images/partners_bg/skala_text.png');
+}
+
+#basis_text_container{
+    background-image: url('../images/partners_bg/basis_text.png');
+}
+#kaspersky_text_container{
+    background-image: url('../images/partners_bg/kaspersky_text.png');
+}
+#yadro_text_container{
+    background-image: url('../images/partners_bg/yadro_text.png');
+}
+
+.about_qr{
+    background-size:contain;
+    background-repeat: no-repeat;
+    position: absolute;
+}
+#yadro_qr{
+    width: 600px;
+    height: 600px;
+    top: 200px;
+    left: 1150px; /* 1100 */
+    background-image: url('../images/partners_bg/YadroQR.png');
+}
+#skala_qr{
+    width: 200px;
+    height: 200px;
+    top: 700px;
+    left: 1150px; /* 1100 */
+    background-image: url('../images/partners_bg/SkalaQR.png');
+}
+
 .about_next_button{
     background-image: url('../images/button_next.png');
+    background-size:contain;
+    background-repeat: no-repeat;
     position: absolute;
     top: 650px;
     left: 2100px; /* 1100 */
     width: 400px;
     height: 400px;
-    background-size:contain;
-    background-repeat: no-repeat;
 }
 
 .about_prev_button{
@@ -45,14 +86,14 @@
 
 .about_video{
     position: absolute;
-    left: 1150px;
-    top: 300px;
+    left: 1135px;
+    top: 270px;
     width: 700px;
 
 }
 .about_watch_button{
     position: absolute;
-    left: 1200px;
+    left: 1160px;
     top: 675px;
     width: 600px;
     height: 600px;

@@ -104,23 +104,58 @@ export default function Control() {
         }
 
         const about_title = document.getElementById('about_title_container')
-        const about_text_container = document.getElementById('about_text_container')
+        const about_title_text= document.getElementById('about_title')
         const about_video = document.getElementById('about_video')
         const about_watch_button = document.getElementById('about_watch_button')
+        const skala_text_container     = document.getElementById('skala_text_container');
+        const skala_qr     = document.getElementById('skala_qr');
+        const yadro_qr     = document.getElementById('yadro_qr');
+        const basis_text_container     = document.getElementById('basis_text_container');
+        const kaspersky_text_container = document.getElementById('kaspersky_text_container');
+        const yadro_text_container     = document.getElementById('yadro_text_container');
+
         function hide_about(){
             current_partner = null
             animate(about_title, {y: -700})
-            animate(about_text_container, {scale: 0})
             animate(about_video, {x: 800})
             animate(about_watch_button, {x: 800})
+            animate(skala_text_container, { x : -1200})
+            animate(basis_text_container, { x : -1200})
+            animate(kaspersky_text_container, { x : -1200})
+            animate(yadro_text_container, { x : -1200})
+            animate(yadro_qr, { scale : 0})
+            animate(skala_qr, { scale : 0})
         }
-        function show_about(){
+
+        function show_about(event_partner){
+            console.log(event_partner.id)
             // TODO: change about page according to partner data???
+            if (event_partner.id == "partner_skala"){
+                animate(about_video, {x: 0}, {delay: 0.5})
+                animate(about_watch_button, {x: 150, scale: 0.9}, {delay: 0.5})
+                animate(skala_qr, { scale : 1}, {delay : 0.8})
+                about_title_text.innerText = "Скала^р"
+                animate(skala_text_container, {x : 0}, {delay: 1})
+            }
+            if (event_partner.id == "partner_basis") {
+                animate(about_video, {x: 0}, {delay: 0.5})
+                animate(about_watch_button, {x: 0}, {delay: 0.5})
+                about_title_text.innerText = "Базис"
+                animate(basis_text_container, {x : 0}, {delay: 1})
+            } 
+            if (event_partner.id == "partner_yadro") {
+                about_title_text.innerText = "YADRO"
+                animate(yadro_qr, { scale : 1})
+                animate(yadro_text_container, {x : 0}, {delay: 1})
+            } 
+            if (event_partner.id == "partner_kaspersky") {
+                animate(about_video, {x: 0}, {delay: 0.5})
+                animate(about_watch_button, {x: 0}, {delay: 0.5})
+                about_title_text.innerText = "Лаборатория Касперского"
+                animate(kaspersky_text_container, {x : 0}, {delay: 1})
+            }
             current_partner = ""
             animate(about_title, {y: 0}, {delay: 0.5})
-            animate(about_text_container, {scale: 1}, {delay: 0.5})
-            animate(about_video, {x: 0}, {delay: 0.5})
-            animate(about_watch_button, {x: 0}, {delay: 0.5})
         }
         hide_about()
         
@@ -177,11 +212,11 @@ export default function Control() {
 
         for (let i = 0; i < partnerButtons.length; i++) {
             let partnerButton = partnerButtons[i]
-            partnerButton.onclick = (event) => {
+            partnerButton.onclick = (e) => {
                 hide_partners_buttons()
                 animate(home_button, {opacity : 1})
                 animate(back_button, {opacity: 1})
-                show_about()
+                show_about(e.target.parentElement)
             }
         }
 
