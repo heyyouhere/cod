@@ -75,7 +75,7 @@ export default function TracksMenu() {
      <>
        <div id="track_text_contaier"></div>
        <TrackGif track_data={kaspersky_data}></TrackGif>
-       <motion.div initial={{x: 925, y: 500, scale:1.1}}>
+       <motion.div initial={{x: 1410, y: 350, scale:1.7}}>
             <div id='tracks_server_image' className='tracks_server_image'>
            </div>
         </motion.div>
