@@ -138,11 +138,19 @@ export default function Control() {
         const skala_right_button = document.getElementById('skala_right_button');
         const basis_left_button = document.getElementById('basis_left_button');
         const basis_right_button = document.getElementById('basis_right_button');
-
+        const skala_x_basis_logo = document.getElementById('skala_x_basis_logo');
+        const yadro_logo = document.getElementById('yadro_logo');
+        const skala_logo = document.getElementById('skala_logo');
+        const skala2_logo = document.getElementById('skala2_logo');
+        const eps = document.getElementById('eps');
+        const virtualization = document.getElementById('virtualization');
+        const data_managment = document.getElementById('data_managment');
 
 
         skala_left_button.onclick = () => {
             animate(home_button, {opacity: 1})
+            animate(data_managment, {scale:0});
+            animate(skala_logo, {scale : 0})
             animate(skala_track_text_left, {scale : 1})
             animate(skala_left_button, {scale:0});
             animate(skala_right_button, {scale:0});
@@ -155,6 +163,8 @@ export default function Control() {
 
         skala_right_button.onclick = () => {
             animate(home_button, {opacity: 1})
+            animate(data_managment, {scale:0});
+            animate(skala_logo, {scale : 0})
             animate(skala_track_text_right, {scale : 1})
             animate(skala_left_button, {scale:0});
             animate(skala_right_button, {scale:0});
@@ -166,6 +176,8 @@ export default function Control() {
 
         basis_left_button.onclick = () => {
             animate(home_button, {opacity: 1})
+            animate(skala_x_basis_logo, {scale:0});
+            animate(virtualization, {scale:0});
             animate(basis_track_text_left, {scale : 1})
             animate(basis_left_button, {scale:0});
             animate(basis_right_button, {scale:0});
@@ -178,6 +190,8 @@ export default function Control() {
 
         basis_right_button.onclick = () => {
             animate(home_button, {opacity: 1})
+            animate(skala_x_basis_logo, {scale:0});
+            animate(virtualization, {scale:0});
             animate(basis_track_text_right, {scale : 1})
             animate(basis_left_button, {scale:0});
             animate(basis_right_button, {scale:0});
@@ -197,6 +211,7 @@ export default function Control() {
                 animate(kaspersky_1_track_text, {scale : 0});
                 animate(kaspersky_2_track_text, {scale : 1});
                 animate(kaspersky_track_next_button, {scale : 0});
+                animate(eps, {scale : 1})
                 is_back_kaspersky = true;
             }
             if (button_next == 'yadro') {
@@ -208,6 +223,8 @@ export default function Control() {
             } 
         }
         function hide_track_texts(){
+            animate(skala_x_basis_logo, {scale:0});
+            animate(virtualization, {scale:0});
             animate(yadro_track_text, {scale : 0});
             animate(yadro2_track_text, {scale : 0});
             animate(skala_track_text, {scale : 0});
@@ -222,6 +239,10 @@ export default function Control() {
             animate(skala_right_button, {scale:0});
             animate(basis_left_button, {scale:0});
             animate(basis_right_button, {scale:0});
+            animate(eps, {scale : 0})
+            animate(data_managment, {scale : 0})
+            animate(skala_logo, {scale : 0})
+            animate(skala2_logo, {scale : 0})
             is_back_kaspersky = false;
         }
         hide_track_texts()
@@ -238,18 +259,24 @@ export default function Control() {
             if (track.id == 'track_gif_continaer_1'){
                 animate(basis_left_button, {scale:1});
                 animate(basis_right_button, {scale:1});
+                animate(skala_x_basis_logo, {scale:1});
+                animate(virtualization, {scale:1});
             }
             if (track.id == 'track_gif_continaer_2'){
-               animate(yadro_track_text, {scale : 1});
+                animate(yadro_track_text, {scale : 1});
+                animate(yadro_logo, {scale : 1})
                animate(kaspersky_track_next_button, {scale : 1});
                button_next = 'yadro'
             }
             if (track.id == 'track_gif_continaer_3'){
+                animate(data_managment, {scale:1});
+                animate(skala_logo, {scale : 1})
                 animate(skala_left_button, {scale:1});
                 animate(skala_right_button, {scale:1});
             }
             if (track.id == 'track_gif_continaer_4'){
-               animate(skala_track_text, {scale : 1});
+                animate(skala_track_text, {scale : 1});
+                animate(skala2_logo, {scale : 1})
             }
             if (track.id == 'track_gif_continaer_5'){
                animate(kaspersky_1_track_text, {scale : 1});
@@ -316,6 +343,7 @@ export default function Control() {
             animate(skala_left_extra, {scale : 0})
             animate(skala_center_extra, {scale : 0})
             animate(skala_right_extra, {scale : 0})
+            animate(yadro_logo, {scale : 0})
         }
 
         function show_about(event_partner){
@@ -376,6 +404,7 @@ export default function Control() {
                 animate(kaspersky_2_track_text, {scale : 0});
                 animate(kaspersky_track_next_button, {scale : 1});
                 animate(home_button, {opacity: 0})
+                animate(eps, {scale : 0})
                 return;
             }
             if (is_back_yadro){
@@ -397,11 +426,25 @@ export default function Control() {
                     animate(basis_track_text_right, {scale : 0});
                     animate(skala_track_text_left, {scale : 0});
                     animate(skala_track_text_right, {scale : 0});
+                    if (current_track.id == 'track_gif_continaer_1'){
+                        animate(skala_x_basis_logo, {scale:1});
+                        animate(virtualization, {scale:1});
+                    } else if (current_track.id == 'track_gif_continaer_3'){
+                        animate(data_managment, {scale:1});
+                        animate(skala_logo, {scale : 1})
+                    }
+                    // TODO: some bug here no time to fix
+                    if (left_track_button !=null){
+                        animate(left_track_button, {scale: 1});
+                        animate(right_track_button, {scale: 1});
+                    }
+
                     animate(kaspersky_track_next_button, {scale : 0});
                     animate(home_button, {opacity: 0})
                     is_in_split = false
                 } else { 
                     animate(bg_video, {opacity: 0});
+                    animate(yadro_logo, {scale : 0});
                     for (let j=0; j<track_gifs.length; j++){
                         if (current_track != track_gifs[j]){
                             animate(track_gifs[j], {scale: 1})

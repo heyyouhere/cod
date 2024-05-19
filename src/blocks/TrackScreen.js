@@ -19,6 +19,13 @@ export default function TrackScreen() {
        <div id='skala_right_button' className="track_right_button"></div>
        <div id='basis_left_button' className="track_left_button"></div>
        <div id='basis_right_button' className="track_right_button"></div>
+       <div id='skala_x_basis_logo' className="tracks_logos"></div>
+       <div id='yadro_logo' className="tracks_logos"></div>
+       <div id='eps' className="tracks_logos"></div>
+       <div id='virtualization' className="tracks_logos"></div>
+       <div id='data_managment' className="tracks_logos"></div>
+       <div id='skala_logo' className="tracks_logos"></div>
+       <div id='skala2_logo' className="tracks_logos"></div>
    </>
 )
 }

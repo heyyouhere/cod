@@ -110,3 +110,68 @@
 #basis_right_button{
     background-image: url("../images/tracks_bg/partner1_right_button.png");
 }
+
+.tracks_logos{
+    position: absolute;
+    background-size:contain;
+    text-align: center;
+    vertical-align: middle;
+    background-repeat: no-repeat;
+}
+
+#yadro_logo{
+    background-image: url('../images/tracks_bg/yadro_logo.png');
+    top: 100px;
+    left: 700px;
+    width: 125px;
+    height: 125px;
+}
+
+#skala_logo{
+    background-image: url('../images/tracks_bg/skala_logo.png');
+    top: 100px;
+    left: 1500px;
+    width: 300px;
+    height: 300px;
+}
+
+#skala2_logo{
+    background-image: url('../images/tracks_bg/skala_logo.png');
+    top: 120px;
+    left: 500px;
+    width: 300px;
+    height: 300px;
+}
+
+#skala_x_basis_logo{
+    background-image: url('../images/tracks_bg/skalax_basis_logo.png');
+    top: 75px;
+    left: 1300px;
+    width: 500px;
+    height: 300px;
+
+}
+
+#eps{
+    background-image: url('../images/tracks_bg/eps.png');
+    top: 925px;
+    left: 100px;
+    width: 250px;
+    height: 250px;
+}
+
+#virtualization{
+    background-image: url('../images/tracks_bg/virtualization.png');
+    top: 90px;
+    left: 250px;
+    width: 500px;
+    height: 250px;
+}
+
+#data_managment{
+    background-image: url('../images/tracks_bg/data_managment.png');
+    top: 90px;
+    left: 250px;
+    width: 500px;
+    height: 250px;
+}
