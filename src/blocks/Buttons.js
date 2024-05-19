@@ -36,3 +36,17 @@ export function TrackRightButton() {
      </>
    )
 }
+
+export function SkalaExtraButtons(){
+   return (
+     <>
+        <div id='skala_left_extra' className="extra_button">
+        </div>
+        <div id='skala_center_extra' className="extra_button">
+        </div>
+        <div id='skala_right_extra' className="extra_button">
+        </div>
+     </>
+   )
+
+}

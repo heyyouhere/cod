@@ -69,6 +69,7 @@ export default function Control() {
         let is_in_split = false;
         let left_track_button = null;
         let right_track_button = null;
+        let is_extra_button = false;
         let is_video = false;
 
         let back_button = document.getElementById('back_button_container')
@@ -255,6 +256,32 @@ export default function Control() {
 
         
 
+        const skala_left_extra = document.getElementById('skala_left_extra');
+        const skala_center_extra = document.getElementById('skala_center_extra');
+        const skala_right_extra = document.getElementById('skala_right_extra');
+
+        skala_left_extra.onclick = () => {
+            hide_about()
+            animate(home_button, {opacity: 1})
+            animate(skala_track_text_left, {scale : 1})
+            is_in_split = true;
+            is_extra_button = true;
+        }
+
+        skala_center_extra.onclick = () => {
+            hide_about()
+            animate(home_button, {opacity: 1})
+            current_track = document.getElementById('track_gif_continaer_3')
+            animate_track(current_track , datas[2])
+            is_in_split = true;
+        }
+
+        skala_right_extra.onclick = () => {
+            hide_about()
+            animate(home_button, {opacity: 1})
+            current_track = document.getElementById('track_gif_continaer_4')
+            animate_track(current_track , datas[3])
+        }
         function hide_about(){
             current_partner = null
             animate(about_title, {y: -700})
@@ -267,18 +294,21 @@ export default function Control() {
             animate(yadro_qr, { scale : 0})
             animate(skala_qr, { scale : 0})
             animate(basis_qr, { scale : 0})
+            animate(skala_left_extra, {scale : 0})
+            animate(skala_center_extra, {scale : 0})
+            animate(skala_right_extra, {scale : 0})
         }
 
         function show_about(event_partner){
             console.log(event_partner.id)
             // TODO: change about page according to partner data???
             if (event_partner.id == "partner_skala"){
-                animate(about_video, {x: 0}, {delay: 0.5})
-                animate(about_watch_button, {x: 150, scale: 0.9}, {delay: 0.5})
-                animate(skala_qr, { scale : 1}, {delay : 0.8})
                 animate(skala_qr, { scale : 3, y: -250, x : 200}, {delay : 0.8})
                 about_title_text.innerText = "Скала^р"
                 animate(skala_text_container, {x : 0}, {delay: 1})
+                animate(skala_left_extra, {scale : 1}, {delay: 1})
+                animate(skala_center_extra, {scale : 1}, {delay: 1.1})
+                animate(skala_right_extra, {scale : 1}, {delay: 1.2})
             }
             if (event_partner.id == "partner_basis") {
                 animate(basis_qr, { scale : 1}, {delay : 1})
@@ -309,6 +339,17 @@ export default function Control() {
                 animate(about_video, {scale : 1, x : 0, y: 0})
                 is_video = false;
                 return
+            }
+            if (is_extra_button){
+                animate(skala_qr, { scale : 3, y: -250, x : 200}, {delay : 0.8})
+                about_title_text.innerText = "Скала^р"
+                animate(skala_text_container, {x : 0})
+                animate(skala_left_extra, {scale : 1})
+                animate(skala_center_extra, {scale : 1})
+                animate(skala_right_extra, {scale : 1})
+                animate(skala_track_text_left, {scale : 0})
+                is_extra_button = false;
+                return 
             }
             if (is_back_kaspersky) {
                 is_back_kaspersky = false;

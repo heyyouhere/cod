@@ -7,6 +7,7 @@
     background-image: url("../images/back_button.png");
     background-size:contain;
     background-repeat: no-repeat;
+    z-index: 10000;
 }
 
 .home_button_container{
@@ -51,3 +52,28 @@
     background-repeat: no-repeat;
 }
 
+
+.extra_button{
+    position: absolute;
+    top: 500px;
+    width: 350px;
+    height: 100px;
+    background-image: url("../images/right_left_button_image.png");
+    background-size:contain;
+    background-repeat: no-repeat;
+    text-align: center;
+    vertical-align: middle;
+    background-repeat: no-repeat;
+}
+#skala_left_extra{
+    background-image: url("../images/partners_bg/skala_left_extra.png");
+    left: 100px;
+}
+#skala_center_extra{
+    background-image: url("../images/partners_bg/skala_center_extra.png");
+    left: 425px;
+}
+#skala_right_extra{
+    background-image: url("../images/partners_bg/skala_right_extra.png");
+    left: 750px;
+}
