@@ -66,14 +66,14 @@ export default function Control() {
     useEffect(() => {
 
         let is_back_kaspersky = false;
+        let is_back_yadro = false;
+        let is_back_skala = false;
         let is_in_split = false;
         let left_track_button = null;
         let right_track_button = null;
         let is_extra_button = false;
         let is_video = false;
         let button_next = 'kaspersky'
-        let is_back_yadro = false;
-        let is_back_skala = false;
 
         let back_button = document.getElementById('back_button_container')
         animate(back_button, {opacity: 0})
@@ -97,6 +97,9 @@ export default function Control() {
         let home_button = document.getElementById('home_button_container')
         home_button.onclick = () => {
             is_in_split = false;
+            is_back_kaspersky = false;
+            is_back_yadro = false;
+            is_back_skala = false;
             left_track_button = null;
             right_track_button = null;
             animate(back_button, {opacity: 0})
