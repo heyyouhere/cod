@@ -58,6 +58,11 @@
 #skala_track_text_left{
     background-image: url('../images/tracks_bg/skala_left.png');
 }
+
+#skala_track_text_left2{
+    background-image: url('../images/tracks_bg/skala_left2.png');
+}
+
 #skala_track_text_right{
     background-image: url('../images/tracks_bg/skala_right.png');
 }
