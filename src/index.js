@@ -21,7 +21,7 @@ import './blocks/VendorScreen.css'
 import TrackScreen from './blocks/TrackScreen.js'
 import './blocks/TrackScreen.css'
 
-import {BackButton, HomeButton, TrackRightButton, TrackLeftButton} from './blocks/Buttons.js'
+import {SkalaExtraButtons, BackButton, HomeButton, TrackRightButton, TrackLeftButton} from './blocks/Buttons.js'
 import './blocks/Buttons.css'
 
 
@@ -39,6 +39,7 @@ root.render(
     <TrackLeftButton/>
     <TrackRightButton/>
     <VendorScreen></VendorScreen>
+    <SkalaExtraButtons/>
 
 
 
