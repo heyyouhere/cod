@@ -47,14 +47,6 @@ function PartnerButton({partner_data}) {
 
 
 export default function PartnersMenu() {
-    useEffect(()=>{
-        let about_text_contaier = document.getElementById("about_text_contaier")
-        let about_title = document.getElementById("about_title")
-        let partners_buttons_container = document.getElementById('partner_buttons_container_logos')
-        let partners = document.getElementById("partners")
-        let about_perv_button = document.getElementById("about_perv_button")
-    },[])
-
     return (
         <>
         <div id='vendors_graphics' className="vendors_graphics"> </div>
