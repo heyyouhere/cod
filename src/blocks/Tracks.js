@@ -13,28 +13,28 @@ const scala_data = {
     id : 1,
     gif : virt_gif,
     position :
-        {x : 630, y: 125},
+        {x : 550, y: 125},
     scale: default_scale,
 }
 const kaspersky_data = {
     id : 2,
     gif : app_gif,
     position :
-        {x : 1170, y: 50},
+        {x : 1115, y: 15},
     scale: default_scale,
 }
 const basis_data = {
     id : 3,
     gif : khraneniye_gif,
     position :
-        {x : 1480, y: 460},
-    scale: default_scale,
+        {x : 1725, y: 435},
+    scale: 1.7,
 }
 const yadro_data = {
     id : 4,
     gif : upravl_gif,
     position :
-        {x : 800, y: 530},
+        {x : 775, y: 540},
     scale: default_scale,
 }
 
