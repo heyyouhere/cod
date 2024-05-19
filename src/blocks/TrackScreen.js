@@ -6,6 +6,7 @@ export default function TrackScreen() {
    return (
    <>
        <div id='yadro_track_text' className="track_left_info"></div>
+       <div id='yadro2_track_text' className="track_left_info"></div>
        <div id='skala_track_text' className="track_left_info"></div>
        <div id='kaspersky_1_track_text' className="track_left_info"></div>
        <div id='kaspersky_2_track_text' className="track_left_info"></div>

@@ -71,6 +71,8 @@ export default function Control() {
         let right_track_button = null;
         let is_extra_button = false;
         let is_video = false;
+        let button_next = 'kaspersky'
+        let is_back_yadro = false;
 
         let back_button = document.getElementById('back_button_container')
         animate(back_button, {opacity: 0})
@@ -123,6 +125,7 @@ export default function Control() {
 
 
         const yadro_track_text = document.getElementById('yadro_track_text');
+        const yadro2_track_text = document.getElementById('yadro2_track_text');
         const skala_track_text = document.getElementById('skala_track_text');
         const kaspersky_1_track_text = document.getElementById('kaspersky_1_track_text');
         const kaspersky_2_track_text = document.getElementById('kaspersky_2_track_text');
@@ -188,14 +191,25 @@ export default function Control() {
 
 
         kaspersky_track_next_button.onclick = () => {
-            animate(home_button, {opacity: 1})
-            animate(kaspersky_1_track_text, {scale : 0});
-            animate(kaspersky_2_track_text, {scale : 1});
-            animate(kaspersky_track_next_button, {scale : 0});
-            is_back_kaspersky = true;
+            console.log(button_next)
+            if (button_next == 'kaspersky'){
+                animate(home_button, {opacity: 1})
+                animate(kaspersky_1_track_text, {scale : 0});
+                animate(kaspersky_2_track_text, {scale : 1});
+                animate(kaspersky_track_next_button, {scale : 0});
+                is_back_kaspersky = true;
+            }
+            if (button_next == 'yadro') {
+                animate(home_button, {opacity: 1})
+                animate(yadro_track_text, {scale : 0});
+                animate(yadro2_track_text, {scale : 1});
+                animate(kaspersky_track_next_button, {scale : 0});
+                is_back_yadro = true;
+            } 
         }
         function hide_track_texts(){
             animate(yadro_track_text, {scale : 0});
+            animate(yadro2_track_text, {scale : 0});
             animate(skala_track_text, {scale : 0});
             animate(kaspersky_1_track_text, {scale : 0});
             animate(kaspersky_2_track_text, {scale : 0});
@@ -213,6 +227,7 @@ export default function Control() {
         hide_track_texts()
 
         function animate_track(track, data){
+            console.log(track, data)
             animate(home_button, {opacity: 0})
             animate(track, { 
                 scale: data.target_position.scale, 
@@ -226,6 +241,8 @@ export default function Control() {
             }
             if (track.id == 'track_gif_continaer_2'){
                animate(yadro_track_text, {scale : 1});
+               animate(kaspersky_track_next_button, {scale : 1});
+               button_next = 'yadro'
             }
             if (track.id == 'track_gif_continaer_3'){
                 animate(skala_left_button, {scale:1});
@@ -237,6 +254,7 @@ export default function Control() {
             if (track.id == 'track_gif_continaer_5'){
                animate(kaspersky_1_track_text, {scale : 1});
                animate(kaspersky_track_next_button, {scale : 1});
+               button_next = 'kaspersky'
             }
 
         }
@@ -282,6 +300,7 @@ export default function Control() {
             current_track = document.getElementById('track_gif_continaer_4')
             animate_track(current_track , datas[3])
         }
+
         function hide_about(){
             current_partner = null
             animate(about_title, {y: -700})
@@ -313,7 +332,7 @@ export default function Control() {
             if (event_partner.id == "partner_basis") {
                 animate(basis_qr, { scale : 1}, {delay : 1})
                 animate(about_video, {x: 0}, {delay: 0.5})
-                animate(about_watch_button, {x: 0}, {delay: 0.5})
+                animate(about_watch_button, {y: -100, x : 150, scale : 0.8}, {delay: 0.5})
                 about_title_text.innerText = "Базис"
                 animate(basis_text_container, {x : 0}, {delay: 1})
             } 
@@ -359,6 +378,14 @@ export default function Control() {
                 animate(home_button, {opacity: 0})
                 return;
             }
+            if (is_back_yadro){
+                is_back_yadro = false;
+                animate(yadro_track_text, {scale : 1});
+                animate(yadro2_track_text, {scale : 0});
+                animate(kaspersky_track_next_button, {scale : 1});
+                animate(home_button, {opacity: 0})
+                return;
+            }
             if (current_track != null){
                 animate(current_track, {opacity : 1})
                 if (is_in_split){
@@ -371,8 +398,6 @@ export default function Control() {
                     animate(skala_track_text_left, {scale : 0});
                     animate(skala_track_text_right, {scale : 0});
                     animate(kaspersky_track_next_button, {scale : 0});
-                    animate(left_track_button, {scale : 1})
-                    animate(right_track_button, {scale : 1})
                     animate(home_button, {opacity: 0})
                     is_in_split = false
                 } else { 
@@ -443,9 +468,9 @@ export default function Control() {
                 let partnerButton = partnerButtons[i]
                 animate(partnerButton, {scale : 0}, {delay: i/10})
             }
-            animate(vendors_graphics, {scale : 0})
             animate(vendors_text, {scale : 0})
             animate(home_button, {opacity : 0})
+            animate(vendors_graphics, {scale : 0})
         }
         function show_partners_buttons(){
             for (let i = 0; i < partnerButtons.length; i++) {
@@ -523,6 +548,7 @@ export default function Control() {
         is_video = true;
     }
 
+    // document.oncontextmenu = document.body.oncontextmenu = function() {return false;}
 
     }, [])
 

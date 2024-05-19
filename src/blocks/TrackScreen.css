@@ -10,7 +10,7 @@
 
 .track_left_info{
     position: absolute;
-    top: 150px;
+    top: 120px;
     left: 900px;
     width: 900px;
     height: 100%;
@@ -20,7 +20,12 @@
 }
 
 #yadro_track_text{
+    top: 80px;
     background-image: url('../images/tracks_bg/yadro.png');
+}
+#yadro2_track_text{
+    top: 80px;
+    background-image: url('../images/tracks_bg/yadro2.png');
 }
 
 #skala_track_text{
