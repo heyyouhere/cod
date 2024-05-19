@@ -15,6 +15,7 @@ export default function VendorScreen() {
        <div id='yadro_text_container' className="about_text_contaier"></div>
        <div id='yadro_qr' className="about_qr"></div>
        <div id='skala_qr' className="about_qr"></div>
+       <div id='basis_qr' className="about_qr"></div>
        <video id="about_video" className="about_video" autoPlay muted loop> 
             <source src={test_video} type="video/mp4"></source>
        </video>

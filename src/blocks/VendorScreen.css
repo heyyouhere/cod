@@ -60,6 +60,14 @@
     background-image: url('../images/partners_bg/SkalaQR.png');
 }
 
+#basis_qr{
+    width: 200px;
+    height: 200px;
+    top: 675px;
+    left: 1150px; /* 1100 */
+    background-image: url('../images/partners_bg/BasisQR.png');
+}
+
 .about_next_button{
     background-image: url('../images/button_next.png');
     background-size:contain;
@@ -89,6 +97,7 @@
     left: 1135px;
     top: 270px;
     width: 700px;
+    z-index: 450;
 
 }
 .about_watch_button{

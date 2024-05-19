@@ -69,6 +69,7 @@ export default function Control() {
         let is_in_split = false;
         let left_track_button = null;
         let right_track_button = null;
+        let is_video = false;
 
         let back_button = document.getElementById('back_button_container')
         animate(back_button, {opacity: 0})
@@ -181,6 +182,7 @@ export default function Control() {
             left_track_button = basis_left_button;
             right_track_button = basis_right_button;
 
+            let is_video = false;
         }
 
 
@@ -248,6 +250,7 @@ export default function Control() {
         const basis_text_container     = document.getElementById('basis_text_container');
         const kaspersky_text_container = document.getElementById('kaspersky_text_container');
         const yadro_text_container     = document.getElementById('yadro_text_container');
+        const basis_qr     = document.getElementById('basis_qr');
 
 
         
@@ -263,6 +266,7 @@ export default function Control() {
             animate(yadro_text_container, { x : -1200})
             animate(yadro_qr, { scale : 0})
             animate(skala_qr, { scale : 0})
+            animate(basis_qr, { scale : 0})
         }
 
         function show_about(event_partner){
@@ -272,10 +276,12 @@ export default function Control() {
                 animate(about_video, {x: 0}, {delay: 0.5})
                 animate(about_watch_button, {x: 150, scale: 0.9}, {delay: 0.5})
                 animate(skala_qr, { scale : 1}, {delay : 0.8})
+                animate(skala_qr, { scale : 3, y: -250, x : 200}, {delay : 0.8})
                 about_title_text.innerText = "Скала^р"
                 animate(skala_text_container, {x : 0}, {delay: 1})
             }
             if (event_partner.id == "partner_basis") {
+                animate(basis_qr, { scale : 1}, {delay : 1})
                 animate(about_video, {x: 0}, {delay: 0.5})
                 animate(about_watch_button, {x: 0}, {delay: 0.5})
                 about_title_text.innerText = "Базис"
@@ -299,6 +305,11 @@ export default function Control() {
         
 
         back_button.onclick = () => {
+            if (is_video){
+                animate(about_video, {scale : 1, x : 0, y: 0})
+                is_video = false;
+                return
+            }
             if (is_back_kaspersky) {
                 is_back_kaspersky = false;
                 animate(kaspersky_1_track_text, {scale : 1});
@@ -465,6 +476,11 @@ export default function Control() {
                 }
             }
         }
+    about_watch_button.onclick =  () => {
+        console.log(about_video)
+        animate(about_video, {scale : 2.5, x : -525, y: 75})
+        is_video = true;
+    }
 
 
     }, [])
