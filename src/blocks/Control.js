@@ -632,7 +632,7 @@ export default function Control() {
         }
     }
 
-    // document.oncontextmenu = document.body.oncontextmenu = function() {return false;}
+    document.oncontextmenu = document.body.oncontextmenu = function() {return false;}
 
     }, [])
 
