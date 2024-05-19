@@ -1,6 +1,7 @@
 import { useEffect } from "react"
 import { motion, useAnimate } from "framer-motion"
 
+import skala_video from "../videos/basis_about_video.mp4"
 
 
 const default_scale = 1.5
@@ -74,6 +75,7 @@ export default function Control() {
         let is_extra_button = false;
         let is_video = false;
         let button_next = 'kaspersky'
+        let current_video = null;
 
         let back_button = document.getElementById('back_button_container')
         animate(back_button, {opacity: 0})
@@ -303,7 +305,8 @@ export default function Control() {
 
         const about_title = document.getElementById('about_title_container')
         const about_title_text= document.getElementById('about_title')
-        const about_video = document.getElementById('about_video')
+        const about_video_basis = document.getElementById('about_video_basis')
+        const about_video_kaspersky = document.getElementById('about_video_kaspersky')
         const about_watch_button = document.getElementById('about_watch_button')
         const skala_text_container     = document.getElementById('skala_text_container');
         const skala_qr     = document.getElementById('skala_qr');
@@ -346,7 +349,8 @@ export default function Control() {
         function hide_about(){
             current_partner = null
             animate(about_title, {y: -700})
-            animate(about_video, {x: 800})
+            animate(about_video_basis, {x: 800})
+            animate(about_video_kaspersky, {x: 800})
             animate(about_watch_button, {x: 800})
             animate(skala_text_container, { x : -1200})
             animate(basis_text_container, { x : -1200})
@@ -362,7 +366,6 @@ export default function Control() {
         }
 
         function show_about(event_partner){
-            console.log(event_partner.id)
             // TODO: change about page according to partner data???
             if (event_partner.id == "partner_skala"){
                 animate(skala_qr, { scale : 3, y: -250, x : 200}, {delay : 0.8})
@@ -374,10 +377,13 @@ export default function Control() {
             }
             if (event_partner.id == "partner_basis") {
                 animate(basis_qr, { scale : 1}, {delay : 1})
-                animate(about_video, {x: 0}, {delay: 0.5})
+                animate(about_video_basis , {x: 0}, {delay: 0.5})
+                current_video = 'basis'
                 animate(about_watch_button, {y: -100, x : 150, scale : 0.8}, {delay: 0.5})
                 about_title_text.innerText = "Базис"
                 animate(basis_text_container, {x : 0}, {delay: 1})
+                about_video_basis.currentTime = 0;
+                about_video_basis.play();
             } 
             if (event_partner.id == "partner_yadro") {
                 about_title_text.innerText = "YADRO"
@@ -385,10 +391,13 @@ export default function Control() {
                 animate(yadro_text_container, {x : 0}, {delay: 1})
             } 
             if (event_partner.id == "partner_kaspersky") {
-                animate(about_video, {x: 0}, {delay: 0.5})
+                animate(about_video_kaspersky, {x: 0}, {delay: 0.5})
+                current_video = 'kaspersky'
                 animate(about_watch_button, {x: 0}, {delay: 0.5})
                 about_title_text.innerText = "Лаборатория Касперского"
                 animate(kaspersky_text_container, {x : 0}, {delay: 1})
+                about_video_kaspersky.currentTime = 0;
+                about_video_kaspersky.play();
             }
             current_partner = ""
             animate(about_title, {y: 0}, {delay: 0.5})
@@ -397,9 +406,14 @@ export default function Control() {
         
 
         back_button.onclick = () => {
-            if (is_video){
-                animate(about_video, {scale : 1, x : 0, y: 0})
-                is_video = false;
+            if (current_video){
+                if (current_video == 'basis'){
+                    animate(about_video_basis, {scale : 1, x : 0, y: 0})
+                }
+                if (current_video == 'kaspersky'){
+                    animate(about_video_kaspersky, {scale : 1, x : 0, y: 0})
+                }
+                current_video = null
                 return
             }
             if (is_extra_button){
@@ -610,9 +624,12 @@ export default function Control() {
             }
         }
     about_watch_button.onclick =  () => {
-        console.log(about_video)
-        animate(about_video, {scale : 2.5, x : -525, y: 75})
-        is_video = true;
+        if (current_video == 'basis'){
+            animate(about_video_basis, {scale : 2.5, x : -525, y: 75})
+        }
+        if (current_video == 'kaspersky'){
+            animate(about_video_kaspersky, {scale : 2.5, x : -525, y: 75})
+        }
     }
 
     // document.oncontextmenu = document.body.oncontextmenu = function() {return false;}
