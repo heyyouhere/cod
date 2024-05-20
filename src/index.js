@@ -25,6 +25,10 @@ import {SkalaExtraButtons, BackButton, HomeButton, TrackRightButton, TrackLeftBu
 import './blocks/Buttons.css'
 
 
+import {InfoButton, InfoText, MainButton} from './blocks/MainButton'
+import './blocks/MainButton.css'
+
+
 import Control from './blocks/Control.js'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -40,6 +44,9 @@ root.render(
     <TrackRightButton/>
     <VendorScreen></VendorScreen>
     <SkalaExtraButtons/>
+    <MainButton/>
+    <InfoButton></InfoButton>
+    <InfoText></InfoText>
 
 
 

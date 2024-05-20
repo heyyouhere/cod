@@ -19,13 +19,13 @@ export default function VendorScreen() {
        <div id='yadro_qr' className="about_qr"></div>
        <div id='skala_qr' className="about_qr"></div>
        <div id='basis_qr' className="about_qr"></div>
-       <video id="about_video_basis" className="about_video" autoPlay muted loop> 
+       <video id="about_video_basis" className="about_video" allowfullscreen="false" autoPlay muted loop> 
             <source src={basis_video} type="video/mp4"></source>
        </video>
-       <video id="about_video_kaspersky" className="about_video" autoPlay muted loop> 
+       <video id="about_video_kaspersky" className="about_video" allowfullscreen="false"  autoPlay muted loop> 
             <source src={kaspersky_video} type="video/mp4"></source>
        </video>
-       <video id="about_video_skala" className="about_video" autoPlay muted loop> 
+       <video id="about_video_skala" className="about_video" allowfullscreen="false" autoPlay muted loop> 
             <source src={skala_video} type="video/mp4"></source>
        </video>
        <div id="about_watch_button" className="about_watch_button"></div>

@@ -17,10 +17,14 @@ body{
   width: 100%;
   height: 100vh;
   overflow: hidden;
-  cursor: none;
+  /* cursor: none; */
 }
 
 ::selection {
     background-color: transparent;
     color: #000;
+}
+
+#detach-button-host {
+    display: none !important;
 }
