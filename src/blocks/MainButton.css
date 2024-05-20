@@ -1,8 +1,8 @@
 .main_button_container{
     position: absolute;
-    left: 150px;
-    top: 300px;
-    width: 1800px;
+    left: 215px;
+    top: 75px;
+    width: 1500px;
     height: 500px;
     background-image: url("./../images/main_screen/main_button.png");
     background-size: contain;
@@ -25,9 +25,9 @@
 }
 .info_text_container{
     position: absolute;
-    top: 300px; /* 600px */
-    left: 175px;
-    width: 1600px;
+    top: 400px; /* 600px */
+    left: 325px;
+    width: 1300px;
     height: 800px;
     background-image: url("../images/main_screen/learn_more_text.png");
     background-size:contain;

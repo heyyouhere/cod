@@ -656,14 +656,8 @@ export default function Control() {
     let main_button = document.getElementById('main_button')
     let info_button = document.getElementById('info_button')
     animate(main_button, {scale : 1})
-    animate(info_button, {scale : 0})
-    animate(info_text, {scale : 0})
-
-    main_button.onclick = () => {
-        animate(main_button, {scale : 0})
-        animate(info_button, {scale : 1})
-        animate(info_text, {scale : 1})
-    }
+    animate(info_button, {scale : 1})
+    animate(info_text, {scale : 1})
     info_button.onclick = () => {
         animate(main_button, {scale : 0})
         animate(info_button, {scale : 0})
