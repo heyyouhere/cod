@@ -307,6 +307,7 @@ export default function Control() {
         const about_title_text= document.getElementById('about_title')
         const about_video_basis = document.getElementById('about_video_basis')
         const about_video_kaspersky = document.getElementById('about_video_kaspersky')
+        const about_video_skala = document.getElementById('about_video_skala')
         const about_watch_button = document.getElementById('about_watch_button')
         const skala_text_container     = document.getElementById('skala_text_container');
         const skala_qr     = document.getElementById('skala_qr');
@@ -327,6 +328,8 @@ export default function Control() {
             hide_about()
             animate(home_button, {opacity: 1})
             animate(skala_track_text_left, {scale : 1})
+
+            current_video = null;
             is_in_split = true;
             is_extra_button = true;
         }
@@ -334,14 +337,18 @@ export default function Control() {
         skala_center_extra.onclick = () => {
             hide_about()
             animate(home_button, {opacity: 1})
+            current_video = null;
             current_track = document.getElementById('track_gif_continaer_3')
             animate_track(current_track , datas[2])
-            is_in_split = true;
+            is_in_split = false;
+            is_extra_button = false;
+            current_video = ''
         }
 
         skala_right_extra.onclick = () => {
             hide_about()
             animate(home_button, {opacity: 1})
+            current_video = null;
             current_track = document.getElementById('track_gif_continaer_4')
             animate_track(current_track , datas[3])
         }
@@ -351,6 +358,7 @@ export default function Control() {
             animate(about_title, {y: -700})
             animate(about_video_basis, {x: 800})
             animate(about_video_kaspersky, {x: 800})
+            animate(about_video_skala, {x: 800})
             animate(about_watch_button, {x: 800})
             animate(skala_text_container, { x : -1200})
             animate(basis_text_container, { x : -1200})
@@ -366,9 +374,11 @@ export default function Control() {
         }
 
         function show_about(event_partner){
-            // TODO: change about page according to partner data???
             if (event_partner.id == "partner_skala"){
-                animate(skala_qr, { scale : 3, y: -250, x : 200}, {delay : 0.8})
+                animate(about_video_skala, {x: 0}, {delay: 0.5})
+                animate(about_watch_button, {y: -100, x : 150, scale : 0.8}, {delay: 0.5})
+                current_video = 'skala'
+                animate(skala_qr, { scale : 1}, {delay : 0.8})
                 about_title_text.innerText = "Скала^р"
                 animate(skala_text_container, {x : 0}, {delay: 1})
                 animate(skala_left_extra, {scale : 1}, {delay: 1})
@@ -406,18 +416,12 @@ export default function Control() {
         
 
         back_button.onclick = () => {
-            if (current_video){
-                if (current_video == 'basis'){
-                    animate(about_video_basis, {scale : 1, x : 0, y: 0})
-                }
-                if (current_video == 'kaspersky'){
-                    animate(about_video_kaspersky, {scale : 1, x : 0, y: 0})
-                }
-                current_video = null
-                return
-            }
             if (is_extra_button){
-                animate(skala_qr, { scale : 3, y: -250, x : 200}, {delay : 0.8})
+                animate(about_video_skala, {x: 0}, {delay: 0.5})
+                animate(about_title, {y: 0}, {delay: 0.5})
+                animate(about_watch_button, {y: -100, x : 150, scale : 0.8}, {delay: 0.5})
+                current_video = "skala"
+                animate(skala_qr, { scale : 1}, {delay : 0.8})
                 about_title_text.innerText = "Скала^р"
                 animate(skala_text_container, {x : 0})
                 animate(skala_left_extra, {scale : 1})
@@ -426,6 +430,19 @@ export default function Control() {
                 animate(skala_track_text_left, {scale : 0})
                 is_extra_button = false;
                 return 
+            }
+            if (current_video){
+                if (current_video == 'basis'){
+                    animate(about_video_basis, {scale : 1, x : 0, y: 0})
+                }
+                if (current_video == 'kaspersky'){
+                    animate(about_video_kaspersky, {scale : 1, x : 0, y: 0})
+                }
+                if (current_video == 'skala'){
+                    animate(about_video_skala, {scale : 1, x : 0, y: 0})
+                }
+                current_video = null
+                return
             }
             if (is_back_kaspersky) {
                 is_back_kaspersky = false;
@@ -629,6 +646,9 @@ export default function Control() {
         }
         if (current_video == 'kaspersky'){
             animate(about_video_kaspersky, {scale : 2.5, x : -525, y: 75})
+        }
+        if (current_video == 'skala'){
+            animate(about_video_skala, {scale : 2.5, x : -525, y: 75})
         }
     }
 

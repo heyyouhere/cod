@@ -2,7 +2,9 @@
 import { useEffect } from "react"
 import { motion, useAnimate } from "framer-motion"
 import basis_video from "../videos/basis_about_video.mp4"
-import test_video from "../videos/test_video.mp4"
+//import test_video from "../videos/test_video.mp4"
+import kaspersky_video from "../videos/kaspersky_about_video.mp4"
+import skala_video from "../videos/skala_about_video.mp4"
 export default function VendorScreen() {
     const [scope, animate] = useAnimate()
    return (
@@ -21,7 +23,10 @@ export default function VendorScreen() {
             <source src={basis_video} type="video/mp4"></source>
        </video>
        <video id="about_video_kaspersky" className="about_video" autoPlay muted loop> 
-            <source src={test_video} type="video/mp4"></source>
+            <source src={kaspersky_video} type="video/mp4"></source>
+       </video>
+       <video id="about_video_skala" className="about_video" autoPlay muted loop> 
+            <source src={skala_video} type="video/mp4"></source>
        </video>
        <div id="about_watch_button" className="about_watch_button"></div>
    </>
