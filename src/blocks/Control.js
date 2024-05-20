@@ -73,7 +73,6 @@ export default function Control() {
         let left_track_button = null;
         let right_track_button = null;
         let is_extra_button = false;
-        let is_video = false;
         let button_next = 'kaspersky'
         let current_video = null;
 
@@ -92,8 +91,6 @@ export default function Control() {
             animate(left_button, {x: 0 })
             console.log("TODO: insert text into divs:", left_text, right_text)
         }
-
-        hide_track_buttons()
 
 
         let home_button = document.getElementById('home_button_container')
@@ -652,6 +649,55 @@ export default function Control() {
         }
     }
 
+    hide_tracks()
+    hide_track_buttons()
+
+    let info_text = document.getElementById('info_text')
+    let main_button = document.getElementById('main_button')
+    let info_button = document.getElementById('info_button')
+    animate(main_button, {scale : 1})
+    animate(info_button, {scale : 0})
+    animate(info_text, {scale : 0})
+
+    main_button.onclick = () => {
+        animate(main_button, {scale : 0})
+        animate(info_button, {scale : 1})
+        animate(info_text, {scale : 1})
+    }
+    info_button.onclick = () => {
+        animate(main_button, {scale : 0})
+        animate(info_button, {scale : 0})
+        animate(info_text, {scale : 0})
+        show_tracks()
+    }
+
+    let lastClickTimestamp = null;
+    const time_to_restart = 5 * 60; //sec
+
+    function handleClickEvent() {
+        lastClickTimestamp = Date.now();
+        // Your custom logic here
+    }
+
+    function checkTimeSinceLastClick() {
+        if (lastClickTimestamp) {
+            const currentTime = Date.now();
+            const timeDifference = currentTime - lastClickTimestamp;
+
+            if (timeDifference > time_to_restart * 1000) { // 4 minutes in miVlliseconds
+                lastClickTimestamp = null;
+                window.location.reload();
+     
+            }
+        }
+    }
+
+
+    document.body.addEventListener('click', function(event) {
+        handleClickEvent();
+    });
+
+    setInterval(checkTimeSinceLastClick, 1000);
     document.oncontextmenu = document.body.oncontextmenu = function() {return false;}
 
     }, [])
