@@ -324,7 +324,7 @@ export default function Control() {
         skala_left_extra.onclick = () => {
             hide_about()
             animate(home_button, {opacity: 1})
-            animate(skala_track_text_left, {scale : 1})
+            animate(basis_track_text_right, {scale : 1})
 
             current_video = null;
             is_in_split = true;
@@ -421,6 +421,7 @@ export default function Control() {
                 animate(skala_qr, { scale : 1}, {delay : 0.8})
                 about_title_text.innerText = "Скала^р"
                 animate(skala_text_container, {x : 0})
+                animate(basis_track_text_right, {scale : 0})
                 animate(skala_left_extra, {scale : 1})
                 animate(skala_center_extra, {scale : 1})
                 animate(skala_right_extra, {scale : 1})
